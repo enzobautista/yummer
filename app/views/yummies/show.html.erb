@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @yummy.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @yummy.user.email %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @yummy.category.name %>
+</p>
+
+<p>
+  <strong>Order cut off:</strong>
+  <%= @yummy.order_cut_off %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @yummy.details %>
+</p>
+
+<p>
+  <strong>Min order:</strong>
+  <%= @yummy.min_order %>
+</p>
+
+<p>
+  <strong>Max order:</strong>
+  <%= @yummy.max_order %>
+</p>
+
+<p>
+  <strong>Current order:</strong>
+  <%= @yummy.current_order %>
+</p>
+
+<p>
+  <strong>Ave price:</strong>
+  <%= @yummy.ave_price %>
+</p>
+
+<p>
+  <strong>Edf low:</strong>
+  <%= @yummy.edf_low %>
+</p>
+
+<p>
+  <strong>Edf high:</strong>
+  <%= @yummy.edf_high %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @yummy.comments %>
+</p>
+
+<%= link_to 'Edit', edit_yummy_path(@yummy) %> |
+<%= link_to 'Back', yummies_path %>

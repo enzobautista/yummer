@@ -1,0 +1,77 @@
+<%= form_with(model: yummy, local: true) do |form| %>
+  <% if yummy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yummy.errors.count, "error") %> prohibited this yummy from being saved:</h2>
+
+      <ul>
+      <% yummy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.text_field :category_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_cut_off %>
+    <%= form.datetime_select :order_cut_off %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_order %>
+    <%= form.number_field :min_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_order %>
+    <%= form.number_field :max_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_order %>
+    <%= form.number_field :current_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ave_price %>
+    <%= form.text_field :ave_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edf_low %>
+    <%= form.text_field :edf_low %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edf_high %>
+    <%= form.text_field :edf_high %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

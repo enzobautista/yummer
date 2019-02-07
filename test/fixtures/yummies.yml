@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  category: one
+  order_cut_off: 2019-02-07 16:28:29
+  details: MyText
+  min_order: 1
+  max_order: 1
+  current_order: 1
+  ave_price: 9.99
+  edf_low: 9.99
+  edf_high: 9.99
+  comments: MyText
+
+two:
+  user: two
+  category: two
+  order_cut_off: 2019-02-07 16:28:29
+  details: MyText
+  min_order: 1
+  max_order: 1
+  current_order: 1
+  ave_price: 9.99
+  edf_low: 9.99
+  edf_high: 9.99
+  comments: MyText

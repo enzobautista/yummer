@@ -1,0 +1,148 @@
+<section class="sec1 container-fluid">
+  <div class="row welcome">
+    <div class="col-md-8">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <div class="col-md-4 w1">
+       <% if user_signed_in? %>
+        Welcome back <b><%=current_user.email%></b> ! <br>
+
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
+      <% else %>
+         <%= link_to('Login', new_user_session_path)  %>  
+      <% end %>
+    </div>
+  </div>
+
+  
+  <div class="row ">
+    <div class="col-md-4 col-img">
+       <%=image_tag ("logo.png"),:class=>"yummerlogo"%>
+
+    </div>
+
+    <div class="col-md-5 col-search">
+      <%= form_tag(yummies_path, method: :get) do %>
+        <%= text_field_tag :term, params[:term] ,:class=>"searchbar",:placeholder=>"What are you craving?"%>
+      <%= submit_tag 'Search',:class=>"searchbtn" %>
+      <%end%>
+
+    </div>
+
+    <div class="col-md-3 col-create">
+    </div>
+
+  </div>
+  <% @yummies.each do |yummy| %>
+  <div class="row">
+     
+    <div class="col-md-7 yummydiv">
+    <b><%= yummy.title %></b> <br>
+    <%= yummy.category.name %> <br>
+    <%= yummy.order_cut_off %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Show', yummy %>
+    </div>
+  </div>
+  <%end%>
+</section>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Yummies</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Category</th>
+      <th>Order cut off</th>
+      <th>Details</th>
+      <th>Min order</th>
+      <th>Max order</th>
+      <th>Current order</th>
+      <th>Ave price</th>
+      <th>Edf low</th>
+      <th>Edf high</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yummies.each do |yummy| %>
+      <tr>
+        <td><%= yummy.title %></td>
+        <td><%= yummy.user.email %></td>
+        <td><%= yummy.category.name %></td>
+        <td><%= yummy.order_cut_off %></td>
+        <td><%= yummy.details %></td>
+        <td><%= yummy.min_order %></td>
+        <td><%= yummy.max_order %></td>
+        <td><%= yummy.current_order %></td>
+        <td><%= yummy.ave_price %></td>
+        <td><%= yummy.edf_low %></td>
+        <td><%= yummy.edf_high %></td>
+        <td><%= yummy.comments %></td>
+        <td><%= link_to 'Show', yummy %></td>
+        <td><%= link_to 'Edit', edit_yummy_path(yummy) %></td>
+        <td><%= link_to 'Destroy', yummy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yummy', new_yummy_path %>
